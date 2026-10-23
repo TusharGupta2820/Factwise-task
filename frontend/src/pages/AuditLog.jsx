@@ -50,9 +50,9 @@ export default function AuditLog() {
   };
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-lg">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Top Level Cryptographic Header */}
-      <div className="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm border border-surface-container">
+      <div className="relative overflow-hidden rounded-xl bg-surface-container-lowest p-3.5 sm:p-space-lg shadow-sm border border-surface-container">
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md relative z-10">
           <div className="space-y-space-xs">
             <div className="flex items-center gap-space-sm flex-wrap">
@@ -70,7 +70,7 @@ export default function AuditLog() {
                 SHA-256 SEALED
               </span>
             </div>
-            <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+            <h1 className="font-headline-lg text-xl sm:text-headline-lg text-on-surface tracking-tight font-bold">
               Administrative Audit Log &amp; Compliance Ledger
             </h1>
             <p className="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs flex-wrap">
@@ -214,7 +214,7 @@ export default function AuditLog() {
       {/* Audit Blocks Table */}
       <div className="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-body-sm">
+          <table className="w-full min-w-[760px] border-collapse text-left text-body-sm">
             <thead>
               <tr className="bg-surface-container-low border-b border-surface-container text-on-surface-variant font-label-md text-xs uppercase tracking-wider">
                 <th className="py-3 px-4">BLOCK #</th>

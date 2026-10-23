@@ -59,9 +59,9 @@ export default function PatientDetail() {
   const history = patient.vitalsHistory || [];
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-lg">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Patient Hero Header & Action Bar */}
-      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg border border-surface-container relative overflow-hidden">
+      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-3.5 sm:p-space-lg border border-surface-container relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
           {/* Identity & Room Context */}
           <div className="flex flex-col md:flex-row md:items-center gap-space-lg">

@@ -108,7 +108,7 @@ export default function DischargeQueue() {
       : [...queueData.eligible, ...queueData.inProgress, ...queueData.blocked];
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-xl">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Top Command & Action Bar */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
         <div>
@@ -121,7 +121,7 @@ export default function DischargeQueue() {
               Containment Alpha / Protocol ISO-72H
             </span>
           </div>
-          <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">
+          <h1 className="font-headline-xl text-xl sm:text-headline-xl text-primary tracking-tight font-bold">
             Discharge Queue &amp; Bed Turnover Management
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-1 flex items-center gap-space-xs flex-wrap">
@@ -306,7 +306,7 @@ export default function DischargeQueue() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-body-md">
+          <table className="w-full min-w-[720px] border-collapse text-left text-body-md">
             <thead>
               <tr className="bg-surface-container-low border-b border-surface-container text-on-surface-variant font-label-md text-xs uppercase tracking-wider">
                 <th className="py-3 px-4">BED / PATIENT ID</th>

@@ -43,12 +43,12 @@ export default function PatientDirectory() {
   };
 
   return (
-    <div className="flex flex-col w-full gap-space-lg p-space-lg pb-space-2xl">
+    <div className="flex flex-col w-full gap-4 sm:gap-6 p-3 sm:p-4 lg:p-6 pb-12 min-w-0">
       {/* Top Banner & Primary Action Hub */}
-      <section className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md p-space-lg bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container">
+      <section className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md p-3.5 sm:p-space-lg bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center gap-space-sm flex-wrap">
-            <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">
+            <h1 className="font-headline-xl text-xl sm:text-headline-xl text-primary tracking-tight font-bold">
               Patient Directory &amp; Bed Allocation
             </h1>
             <span className="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-label-md">
@@ -215,7 +215,7 @@ export default function PatientDirectory() {
       {/* High-Density Data Table */}
       <section className="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left">
+          <table className="w-full min-w-[760px] border-collapse text-left">
             <thead>
               <tr className="bg-surface-container-low/70 border-b border-surface-container text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
                 <th className="py-3 px-4">BED / CODE</th>

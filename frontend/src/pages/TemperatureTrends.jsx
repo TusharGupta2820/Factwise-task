@@ -20,8 +20,8 @@ export default function TemperatureTrends() {
   const afebrileCases = patients.filter(p => p.latestVitals?.temperature && !p.latestVitals?.isFeverSpike && !p.latestVitals?.isCaution);
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-lg">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-3.5 sm:p-space-lg rounded-2xl border border-surface-container shadow-sm">
         <div className="flex items-center gap-space-md">
           <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-md">
             <span className="material-symbols-outlined text-[26px]">show_chart</span>

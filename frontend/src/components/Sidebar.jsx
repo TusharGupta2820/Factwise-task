@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 export default function Sidebar() {
-  const { stats, activeRole, currentUser, logout } = useApp();
+  const { stats, activeRole, currentUser, logout, mobileMenuOpen, setMobileMenuOpen } = useApp();
   const navigate = useNavigate();
 
   const getPersona = () => {
@@ -64,121 +64,151 @@ export default function Sidebar() {
   const navItems = getNavItems();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[250px] bg-primary text-on-primary z-50 flex flex-col justify-between shadow-xl border-r border-primary-container/30 select-none">
-      {/* Scrollable Nav Area */}
-      <div className="flex flex-col flex-1 min-h-0 overflow-y-auto">
-        {/* Brand Header */}
-        <div className="p-space-md bg-tertiary border-b border-primary-container/40">
-          <div className="flex items-center gap-space-sm">
-            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary shadow-sm shrink-0">
-              <span className="material-symbols-outlined text-[20px]">verified_user</span>
-            </div>
-            <div className="min-w-0">
-              <span className="font-headline-md text-base tracking-tight font-bold block text-on-primary truncate">
-                QuarantineCare
-              </span>
-              <span className="font-telemetry-unit text-[10px] uppercase tracking-widest text-secondary-fixed block">
-                Biocontainment OS
-              </span>
-            </div>
-          </div>
-          <div className="mt-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/80 text-on-primary-fixed">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
-            <span className="font-telemetry-unit text-[9px] uppercase tracking-wider font-semibold">
-              {stats.totalBeds || 74} BEDS ISOLATION
-            </span>
-          </div>
-        </div>
+    <>
+      {/* Mobile Backdrop Overlay */}
+      {mobileMenuOpen && (
+        <div
+          onClick={() => setMobileMenuOpen(false)}
+          className="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 lg:hidden transition-opacity duration-300 animate-fadeIn"
+          aria-label="Close navigation drawer"
+        />
+      )}
 
-        {/* Role Console Indicator */}
-        <div className="px-space-md py-2 flex items-center justify-between border-b border-primary-container/20 bg-primary/40">
-          <span className="font-telemetry-unit text-[9px] uppercase tracking-widest text-primary-fixed-dim font-bold">
-            Active Console
-          </span>
-          <span className="px-2 py-0.5 rounded-md bg-secondary/20 text-secondary-fixed font-telemetry-unit text-[10px] font-bold">
-            {activeRole} Scope
-          </span>
-        </div>
-
-        {/* Navigation Links */}
-        <nav className="flex flex-col gap-0.5 px-space-xs py-2 flex-1 pb-4">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              className={({ isActive }) =>
-                `flex items-center justify-between px-3 py-2 rounded-lg transition-all text-xs ${
-                  isActive
-                    ? 'bg-primary-container text-on-primary shadow-sm font-semibold'
-                    : 'text-primary-fixed hover:bg-primary-container/50 hover:text-on-primary'
-                }`
-              }
-            >
-              <div className="flex items-center gap-2.5 min-w-0 truncate">
-                <span className="material-symbols-outlined text-[18px] shrink-0">{item.icon}</span>
-                <span className="truncate">{item.label}</span>
+      <aside
+        className={`fixed left-0 top-0 h-screen w-[270px] sm:w-[250px] bg-primary text-on-primary z-50 flex flex-col justify-between shadow-2xl lg:shadow-xl border-r border-primary-container/30 select-none transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        }`}
+      >
+        {/* Scrollable Nav Area */}
+        <div className="flex flex-col flex-1 min-h-0 overflow-y-auto">
+          {/* Brand Header */}
+          <div className="p-space-md bg-tertiary border-b border-primary-container/40">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-space-sm min-w-0">
+                <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary shadow-sm shrink-0">
+                  <span className="material-symbols-outlined text-[20px]">verified_user</span>
+                </div>
+                <div className="min-w-0">
+                  <span className="font-headline-md text-base tracking-tight font-bold block text-on-primary truncate">
+                    QuarantineCare
+                  </span>
+                  <span className="font-telemetry-unit text-[10px] uppercase tracking-widest text-secondary-fixed block">
+                    Biocontainment OS
+                  </span>
+                </div>
               </div>
-              {item.badge !== undefined && (
-                <span
-                  className={`shrink-0 ml-1.5 px-2 py-0.5 rounded-full font-telemetry-unit text-[10px] whitespace-nowrap leading-none ${
-                    item.badgeColor || 'bg-primary-container text-on-primary-fixed'
-                  }`}
-                >
-                  {item.badge}
+
+              {/* Mobile Close Button */}
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                className="lg:hidden p-1.5 rounded-lg text-primary-fixed-dim hover:text-on-primary hover:bg-primary-container/60 transition-colors shrink-0"
+                aria-label="Close drawer"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+
+            <div className="mt-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/80 text-on-primary-fixed">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+              <span className="font-telemetry-unit text-[9px] uppercase tracking-wider font-semibold">
+                {stats.totalBeds || 74} BEDS ISOLATION
+              </span>
+            </div>
+          </div>
+
+          {/* Role Console Indicator */}
+          <div className="px-space-md py-2 flex items-center justify-between border-b border-primary-container/20 bg-primary/40">
+            <span className="font-telemetry-unit text-[9px] uppercase tracking-widest text-primary-fixed-dim font-bold">
+              Active Console
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-secondary/20 text-secondary-fixed font-telemetry-unit text-[10px] font-bold">
+              {activeRole} Scope
+            </span>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col gap-0.5 px-space-xs py-2 flex-1 pb-4">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) =>
+                  `flex items-center justify-between px-3 py-2.5 sm:py-2 rounded-lg transition-all text-xs ${
+                    isActive
+                      ? 'bg-primary-container text-on-primary shadow-sm font-semibold'
+                      : 'text-primary-fixed hover:bg-primary-container/50 hover:text-on-primary'
+                  }`
+                }
+              >
+                <div className="flex items-center gap-2.5 min-w-0 truncate">
+                  <span className="material-symbols-outlined text-[18px] shrink-0">{item.icon}</span>
+                  <span className="truncate">{item.label}</span>
+                </div>
+                {item.badge !== undefined && (
+                  <span
+                    className={`shrink-0 ml-1.5 px-2 py-0.5 rounded-full font-telemetry-unit text-[10px] whitespace-nowrap leading-none ${
+                      item.badgeColor || 'bg-primary-container text-on-primary-fixed'
+                    }`}
+                  >
+                    {item.badge}
+                  </span>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        {/* Fixed Bottom Capacity & Persona Widget */}
+        <div className="p-3 bg-tertiary border-t border-primary-container/40 flex flex-col gap-2 shrink-0">
+          <div className="p-2 rounded-lg bg-primary-container/70 text-xs">
+            <div className="flex items-center justify-between text-[10px]">
+              <span className="text-primary-fixed-dim uppercase tracking-wider font-semibold">
+                Occupancy
+              </span>
+              <span className="font-telemetry-unit text-secondary-fixed font-bold">
+                {stats.occupiedBeds}/{stats.totalBeds} ({stats.occupancyPercent}%)
+              </span>
+            </div>
+            <div className="w-full bg-primary rounded-full h-1 mt-1.5">
+              <div
+                className="bg-secondary-fixed h-1 rounded-full transition-all duration-500"
+                style={{ width: `${stats.occupancyPercent}%` }}
+              ></div>
+            </div>
+          </div>
+
+          {/* Current Active Persona & Sign Out */}
+          <div className="flex items-center justify-between gap-2 pt-1">
+            <div className="flex items-center gap-2 min-w-0">
+              <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold text-xs shadow-sm shrink-0">
+                {currentUser?.role === 'Nurse' ? 'N' : currentUser?.role === 'Doctor' ? 'D' : 'A'}
+              </div>
+              <div className="flex flex-col min-w-0">
+                <span className="font-semibold text-xs text-on-primary truncate max-w-[125px]">
+                  {currentUser?.name || persona.name}
                 </span>
-              )}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
-
-      {/* Fixed Bottom Capacity & Persona Widget */}
-      <div className="p-3 bg-tertiary border-t border-primary-container/40 flex flex-col gap-2 shrink-0">
-        <div className="p-2 rounded-lg bg-primary-container/70 text-xs">
-          <div className="flex items-center justify-between text-[10px]">
-            <span className="text-primary-fixed-dim uppercase tracking-wider font-semibold">
-              Occupancy
-            </span>
-            <span className="font-telemetry-unit text-secondary-fixed font-bold">
-              {stats.occupiedBeds}/{stats.totalBeds} ({stats.occupancyPercent}%)
-            </span>
-          </div>
-          <div className="w-full bg-primary rounded-full h-1 mt-1.5">
-            <div
-              className="bg-secondary-fixed h-1 rounded-full transition-all duration-500"
-              style={{ width: `${stats.occupancyPercent}%` }}
-            ></div>
+                <span className="text-[10px] text-primary-fixed-dim font-telemetry-unit uppercase tracking-wider truncate">
+                  {currentUser?.role || persona.role}
+                </span>
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                logout();
+                navigate('/login');
+              }}
+              title="Sign out & Terminate session"
+              className="p-1.5 rounded text-primary-fixed-dim hover:text-error hover:bg-primary-container/60 transition-colors"
+            >
+              <span className="material-symbols-outlined text-[18px]">logout</span>
+            </button>
           </div>
         </div>
-
-        {/* Current Active Persona & Sign Out */}
-        <div className="flex items-center justify-between gap-2 pt-1">
-          <div className="flex items-center gap-2 min-w-0">
-            <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold text-xs shadow-sm shrink-0">
-              {currentUser?.role === 'Nurse' ? 'N' : currentUser?.role === 'Doctor' ? 'D' : 'A'}
-            </div>
-            <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-xs text-on-primary truncate max-w-[125px]">
-                {currentUser?.name || persona.name}
-              </span>
-              <span className="text-[10px] text-primary-fixed-dim font-telemetry-unit uppercase tracking-wider truncate">
-                {currentUser?.role || persona.role}
-              </span>
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              logout();
-              navigate('/login');
-            }}
-            title="Sign out & Terminate session"
-            className="p-1 rounded text-primary-fixed-dim hover:text-error hover:bg-primary-container/60 transition-colors"
-          >
-            <span className="material-symbols-outlined text-[18px]">logout</span>
-          </button>
-        </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 }

@@ -145,7 +145,7 @@ export default function NurseTasks() {
   };
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-lg">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Header Block: Full Width with Tactical Metadata */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
         <div>
@@ -158,7 +158,7 @@ export default function NurseTasks() {
               Bedside Vitals Protocol
             </span>
           </div>
-          <h1 className="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">
+          <h1 className="font-headline-xl text-xl sm:text-headline-xl text-on-surface tracking-tight font-bold">
             Nurse Temperature Recording — Shift Duty
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-0.5">

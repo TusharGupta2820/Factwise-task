@@ -107,27 +107,27 @@ export default function LoginPage() {
               <span className="material-symbols-outlined text-[28px]">verified_user</span>
             </div>
             <div className="text-left">
-              <h1 className="font-headline-xl text-3xl font-extrabold text-white tracking-tight leading-none">
+              <h1 className="font-headline-xl text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-none">
                 QuarantineCare
               </h1>
-              <span className="font-telemetry-unit text-xs uppercase tracking-widest text-secondary-fixed font-bold block mt-1">
+              <span className="font-telemetry-unit text-[11px] sm:text-xs uppercase tracking-widest text-secondary-fixed font-bold block mt-1">
                 Biocontainment OS v4.2
               </span>
             </div>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-surface-container-low font-telemetry-unit text-xs uppercase tracking-wider mt-1 border border-white/10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-surface-container-low font-telemetry-unit text-[10px] sm:text-xs uppercase tracking-wider mt-1 border border-white/10 text-center">
             <span className="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
             <span>Role-Based Access Control (RBAC) • Level 4 Clearance</span>
           </div>
         </div>
 
         {/* Card Container */}
-        <div className="w-full bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-space-xl overflow-hidden text-left flex flex-col gap-space-lg">
+        <div className="w-full bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-4 sm:p-6 lg:p-8 overflow-hidden text-left flex flex-col gap-4 sm:gap-space-lg">
           <div>
             <span className="font-telemetry-unit text-xs uppercase tracking-wider text-secondary font-bold block mb-1">
               Select Simulated Persona
             </span>
-            <h2 className="font-headline-md text-headline-md font-bold text-on-surface">
+            <h2 className="font-headline-md text-base sm:text-headline-md font-bold text-on-surface">
               Choose your clinical access level to enter the respective dashboard
             </h2>
           </div>

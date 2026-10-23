@@ -4,7 +4,7 @@ import { useApp } from '../context/AppContext';
 import { fetchPatients } from '../api/client';
 
 export default function Header() {
-  const { activeRole, setActiveRole, stats, currentUser, logout, switchDemoRole } = useApp();
+  const { activeRole, setActiveRole, stats, currentUser, logout, switchDemoRole, mobileMenuOpen, setMobileMenuOpen } = useApp();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -84,23 +84,32 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-[250px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container">
-      {/* Breadcrumb Context */}
-      <div className="flex items-center gap-space-md">
-        <div className="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
-          <span className="material-symbols-outlined text-[18px]">domain</span>
-          <span className="hover:text-primary cursor-pointer" onClick={() => navigate('/')}>
+    <header className="fixed top-0 left-0 lg:left-[250px] right-0 h-16 bg-surface/95 backdrop-blur-xl z-30 flex items-center justify-between px-3 sm:px-4 lg:px-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container transition-all duration-300">
+      {/* Breadcrumb Context & Mobile Hamburger */}
+      <div className="flex items-center gap-1.5 sm:gap-space-md min-w-0">
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 -ml-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center shrink-0"
+          aria-label="Toggle navigation drawer"
+        >
+          <span className="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+
+        <div className="flex items-center gap-1 sm:gap-space-xs font-body-sm text-body-sm text-on-surface-variant min-w-0">
+          <span className="material-symbols-outlined text-[18px] shrink-0 text-primary">domain</span>
+          <span className="hidden sm:inline hover:text-primary cursor-pointer truncate" onClick={() => navigate('/')}>
             Containment Alpha
           </span>
-          <span className="text-outline-variant">/</span>
-          <span className="font-label-lg text-label-lg text-on-surface font-semibold">
+          <span className="hidden sm:inline text-outline-variant">/</span>
+          <span className="font-label-lg text-xs sm:text-label-lg text-on-surface font-semibold truncate max-w-[130px] sm:max-w-[180px] md:max-w-none">
             {getBreadcrumb()}
           </span>
         </div>
       </div>
 
-      {/* Global Search Bar */}
-      <div className="flex-1 max-w-md mx-space-xl relative" ref={searchRef}>
+      {/* Global Search Bar (hidden on mobile to preserve header real estate) */}
+      <div className="hidden md:block flex-1 max-w-md mx-2 lg:mx-space-xl relative" ref={searchRef}>
         <div className="relative w-full">
           <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">
             search
@@ -226,7 +235,7 @@ export default function Header() {
           </button>
 
           {showNotifications && (
-            <div className="absolute right-0 top-full mt-2 w-80 bg-surface-container-lowest rounded-xl shadow-2xl border border-surface-container p-space-md z-50">
+            <div className="absolute right-0 top-full mt-2 w-[calc(100vw-24px)] sm:w-80 max-w-sm bg-surface-container-lowest rounded-xl shadow-2xl border border-surface-container p-space-md z-50">
               <div className="flex items-center justify-between pb-space-xs border-b border-surface-container mb-space-sm">
                 <span className="font-label-lg text-label-lg font-bold text-on-surface">
                   Biocontainment Alerts ({stats.feverSpikes})

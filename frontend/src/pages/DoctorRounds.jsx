@@ -130,9 +130,9 @@ export default function DoctorRounds() {
   };
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-lg">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Operational Header with Clinical Progress */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-surface-container">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-3.5 sm:p-space-lg rounded-xl shadow-sm border border-surface-container">
         <div className="flex flex-col">
           <div className="flex items-center gap-space-xs font-label-md text-label-md text-secondary">
             <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -140,7 +140,7 @@ export default function DoctorRounds() {
               Active Round Session · Ward Bravo Core
             </span>
           </div>
-          <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold mt-0.5">
+          <h1 className="font-headline-lg text-xl sm:text-headline-lg text-on-surface tracking-tight font-bold mt-0.5">
             Doctor Rounds &amp; Clinical Evaluation
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-0.5">

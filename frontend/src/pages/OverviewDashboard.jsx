@@ -45,7 +45,7 @@ export default function OverviewDashboard() {
   });
 
   return (
-    <div className="flex flex-col w-full gap-space-xl p-space-lg">
+    <div className="flex flex-col w-full gap-4 sm:gap-6 p-3 sm:p-4 lg:p-6 min-w-0">
       {/* Top Operational Alert Banner */}
       <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-error/15 via-error-container to-surface-container-high p-space-md shadow-sm border border-error/20">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm relative z-10">
@@ -80,7 +80,7 @@ export default function OverviewDashboard() {
       </div>
 
       {/* Operational Header & Controls */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-surface-container">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md bg-surface-container-lowest p-3.5 sm:p-space-lg rounded-xl shadow-sm border border-surface-container">
         <div className="flex flex-col">
           <div className="flex items-center gap-space-sm">
             <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
@@ -123,7 +123,7 @@ export default function OverviewDashboard() {
       </div>
 
       {/* 6 Executive KPI Metric Bento Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-space-md">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-space-md">
         {/* Metric 1: Beds Occupied */}
         <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">

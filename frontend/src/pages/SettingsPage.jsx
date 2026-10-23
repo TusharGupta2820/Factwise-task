@@ -94,7 +94,7 @@ export default function SettingsPage() {
   const isAdmin = activeRole === 'Admin';
 
   return (
-    <div className="flex flex-col w-full p-4 md:p-6 gap-6">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Top Action & Meta Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-5 gap-4 border-b border-surface-container">
         <div className="flex flex-col">

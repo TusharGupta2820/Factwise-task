@@ -80,6 +80,7 @@ export function AppProvider({ children }) {
   const [activeRole, setActiveRole] = useState(currentUser?.role || 'Nurse');
   const [toast, setToast] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [unauthorizedActionModal, setUnauthorizedActionModal] = useState(null);
 
   // Sync activeRole with currentUser
@@ -184,6 +185,8 @@ export function AppProvider({ children }) {
         refreshStats: loadStats,
         searchOpen,
         setSearchOpen,
+        mobileMenuOpen,
+        setMobileMenuOpen,
         unauthorizedActionModal,
         triggerUnauthorizedWarning,
         closeUnauthorizedWarning

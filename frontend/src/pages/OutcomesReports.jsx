@@ -38,7 +38,7 @@ export default function OutcomesReports() {
   const dailyTrends = data?.dailyTrends || [];
 
   return (
-    <div className="flex flex-col w-full p-space-lg gap-space-xl">
+    <div className="flex flex-col w-full p-3 sm:p-4 lg:p-6 gap-4 sm:gap-6 min-w-0">
       {/* Top Executive Action Header */}
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg">
         <div className="flex flex-col gap-space-xs max-w-3xl">

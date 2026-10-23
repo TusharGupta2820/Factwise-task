@@ -6,8 +6,9 @@
   html, body {
     margin: 0;
     padding: 0;
-    overscroll-behavior: none;
     font-family: 'Inter', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
   }
 }
 

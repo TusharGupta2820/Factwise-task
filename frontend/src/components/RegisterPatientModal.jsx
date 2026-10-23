@@ -40,9 +40,9 @@ export default function RegisterPatientModal({ isOpen, onClose, onRegistered }) 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container overflow-hidden">
+      <div className="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container overflow-hidden max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-space-lg bg-surface-container-low border-b border-surface-container">
+        <div className="flex items-center justify-between p-4 sm:p-space-lg bg-surface-container-low border-b border-surface-container shrink-0">
           <div className="flex items-center gap-space-sm">
             <div className="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm">
               <span className="material-symbols-outlined text-[20px] text-secondary-fixed">
@@ -50,10 +50,10 @@ export default function RegisterPatientModal({ isOpen, onClose, onRegistered }) 
               </span>
             </div>
             <div>
-              <h2 className="font-headline-md text-headline-md font-bold text-on-surface">
+              <h2 className="font-headline-md text-base sm:text-headline-md font-bold text-on-surface">
                 Register Patient / Bed Intake
               </h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">
+              <p className="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">
                 BSL-4 Biocontainment Isolation Allocation
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function RegisterPatientModal({ isOpen, onClose, onRegistered }) 
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="p-space-lg flex flex-col gap-space-md">
+        <form onSubmit={handleSubmit} className="p-4 sm:p-space-lg flex flex-col gap-space-md overflow-y-auto">
           {error && (
             <div className="p-space-sm rounded-lg bg-error-container text-on-error-container font-body-sm flex items-center gap-2">
               <span className="material-symbols-outlined text-[18px]">error</span>

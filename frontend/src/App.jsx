@@ -31,26 +31,26 @@ import AccessDenied from './pages/AccessDenied';
 function ClinicalShell() {
   return (
     <div className="h-full min-h-screen bg-background font-body-md text-on-surface flex">
-      {/* 250px Fixed Sidebar */}
+      {/* 250px Responsive Sidebar Drawer */}
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="pl-[250px] min-h-screen flex flex-col flex-1 w-full">
-        {/* Fixed Header */}
+      <div className="lg:pl-[250px] pl-0 min-h-screen flex flex-col flex-1 w-full overflow-x-hidden transition-all duration-300">
+        {/* Fixed Responsive Header */}
         <Header />
 
         {/* Main Content Body */}
-        <main className="relative pt-16 w-full flex-1 bg-surface flex flex-col">
+        <main className="relative pt-16 w-full flex-1 bg-surface flex flex-col min-w-0">
           {/* Synthetic Demo Warning Strip */}
-          <div className="w-full px-space-lg py-space-xs bg-surface-container-high/60 flex items-center justify-center gap-space-sm border-b border-surface-container/40">
-            <span className="material-symbols-outlined text-[16px] text-tertiary">shield_lock</span>
-            <span className="font-label-md text-xs uppercase tracking-wide text-on-surface-variant font-medium">
+          <div className="w-full px-3 py-1.5 bg-surface-container-high/60 flex items-center justify-center gap-1.5 border-b border-surface-container/40 text-center">
+            <span className="material-symbols-outlined text-[15px] text-tertiary shrink-0">shield_lock</span>
+            <span className="font-label-md text-[10px] sm:text-xs uppercase tracking-wide text-on-surface-variant font-medium">
               SYNTHETIC DEMO DATA — Operational biocontainment simulation running live on Node.js &amp; Express.js
             </span>
           </div>
 
           {/* Router Views */}
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full min-w-0">
             <Outlet />
           </div>
         </main>
