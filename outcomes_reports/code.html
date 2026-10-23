@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-container": "#86f2e4", "on-surface-variant": "#43474e", "on-error-container": "#93000a", "inverse-primary": "#acc8f7", "secondary": "#006a61", "tertiary": "#001f4b", "on-primary-fixed": "#001c3b", "error": "#ba1a1a", "surface": "#f8f9ff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "primary-fixed-dim": "#acc8f7", "primary-container": "#17365d", "surface-tint": "#435f89", "on-secondary-fixed-variant": "#005049", "on-secondary-container": "#006f66", "surface-bright": "#f8f9ff", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "outline": "#74777f", "on-background": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-tertiary-container": "#6a9dff", "surface-variant": "#d3e4fe", "outline-variant": "#c4c6cf", "error-container": "#ffdad6", "on-primary-fixed-variant": "#2b486f", "surface-container-lowest": "#ffffff", "background": "#f8f9ff", "tertiary-fixed-dim": "#adc6ff", "surface-dim": "#cbdbf5", "secondary-fixed": "#89f5e7", "on-error": "#ffffff", "on-secondary-fixed": "#00201d", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "on-primary-container": "#84a0cd", "tertiary-container": "#003374", "secondary-fixed-dim": "#6bd8cb", "on-surface": "#0b1c30", "on-tertiary-fixed": "#001a42", "primary": "#002043", "primary-fixed": "#d5e3ff", "on-tertiary-fixed-variant": "#004395", "tertiary-fixed": "#d8e2ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-xl": "1.5rem", "margin": "1rem", "space-2xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-lg": "1rem" }, "fontFamily": { "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "telemetry-data": ["JetBrains Mono"], "telemetry-unit": ["JetBrains Mono"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "telemetry-data": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "telemetry-unit": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[250px] bg-primary text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="p-space-lg bg-tertiary"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div><span class="font-headline-md text-headline-md tracking-tight font-bold block text-on-primary">QuarantineCare</span><span class="font-telemetry-unit text-telemetry-unit uppercase tracking-wider text-secondary-fixed block">Biocontainment OS</span></div></div><div class="mt-space-sm inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary-fixed"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider text-[10px]">74 BEDS ISOLATION</span></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Overview</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="patients" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">hotel</span><span>Patients</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-telemetry-unit text-telemetry-unit">74 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="nurse-tasks" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Nurse Tasks</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-unit text-telemetry-unit">12</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="doctor-rounds" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span>Doctor Rounds</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-unit text-telemetry-unit">19</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="discharge-queue" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">exit_to_app</span><span>Discharge Queue</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-unit text-telemetry-unit font-bold">5</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm" data-path="outcomes" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">insert_chart</span><span>Outcomes &amp; Reports</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="audit-log" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">history</span><span>Audit Log</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="settings" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div><div class="p-space-md bg-tertiary/70 flex flex-col gap-space-md"><div class="p-space-sm rounded-lg bg-primary-container"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Capacity Status</span><span class="inline-flex items-center gap-1 font-telemetry-unit text-telemetry-unit text-secondary-fixed font-bold"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>FULL</span></div><div class="mt-1 font-telemetry-data text-telemetry-data text-on-primary">74 / 74 Beds (100%)</div><div class="w-full bg-primary rounded-full h-1.5 mt-2"><div class="bg-secondary-fixed h-1.5 rounded-full w-full"></div></div><p class="mt-1 font-body-sm text-body-sm text-error-container">High Alert: Wing B Air-Lock Active</p></div><div class="flex items-center gap-space-sm pt-space-xs"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed"><span class="material-symbols-outlined text-[18px]">medical_services</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-lg text-label-lg text-on-primary truncate">S. Jenkins, RN</span><span class="font-body-sm text-body-sm text-primary-fixed-dim truncate">Isolation Ward B</span></div></div></div></aside><div class="pl-[250px] min-h-screen flex flex-col"><header class="fixed top-0 left-[250px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">domain</span><span>Containment Alpha</span><span class="text-outline-variant">/</span><span class="font-label-lg text-label-lg text-on-surface">Ward Matrix</span></div></div><div class="flex-1 max-w-md mx-space-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-9 pr-14 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-secondary/50 shadow-sm" placeholder="Search patient ID, name, bed (e.g. QC-042, Bed 14)..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-telemetry-unit text-telemetry-unit">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex flex-col items-end"><div class="inline-flex items-center rounded-lg bg-surface-container p-0.5"><button class="px-space-sm py-1 rounded text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors">Nurse</button><button class="px-space-sm py-1 rounded text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors">Doctor</button><button class="px-space-sm py-1 rounded bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm">Admin</button></div><span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant mt-0.5">Simulation Mode</span></div><div class="flex items-center gap-space-xs font-telemetry-data text-telemetry-data text-on-surface-variant bg-surface-container-lowest px-space-sm py-1 rounded-lg shadow-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>14:32</span><span class="font-telemetry-unit text-telemetry-unit text-outline-variant">OCT 24</span></div><button class="relative p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">3</span></button><button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="w-full px-space-lg py-space-xs bg-surface-container-high/60 flex items-center justify-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-tertiary">shield_lock</span><span class="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">SYNTHETIC DEMO DATA — Operational simulation only. Not connected to live clinical records.</span></div><div class="w-full px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Executive Action Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-telemetry-unit text-telemetry-unit tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Biocontainment Analytical Engine v4.2</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-semibold">Live Synthesis</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Clinical Outcomes &amp; Benchmark Analytics</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Monitoring Facility Efficacy vs WHO Biocontainment Benchmarks · Synthetic Demo Dataset (Cohort N=68 Resolved Cases)
+      </p>
+</div>
+<!-- Date Filter + Action Buttons -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="flex items-center p-1 rounded-lg bg-surface-container shadow-sm">
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Last 7 Days</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest font-label-md text-label-md text-primary font-semibold shadow-sm">Last 30 Days</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Quarter to Date</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Custom Range</button>
+</div>
+<div class="hidden md:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface font-telemetry-data text-telemetry-data shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span>
+<span>Oct 01, 2024 – Oct 24, 2024</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container shadow-sm transition-colors" title="Export raw cohort data">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Summary</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Regulatory Compliance Banner -->
+<div class="relative overflow-hidden rounded-xl bg-secondary/10 p-space-lg mb-space-xl shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-secondary font-bold">Facility Operating Within Regulatory Clinical Benchmarks</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-telemetry-unit text-telemetry-unit uppercase tracking-wide">Standard WHO-EPR-2024.1</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5">
+            Current Treatment Success (<strong class="font-semibold text-secondary">88.2%</strong>) exceeds the 85.0% minimum threshold. Mortality Rate (<strong class="font-semibold text-on-surface">11.8%</strong>) remains safely within the ≤ 15.0% biocontainment ceiling limit.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-lg self-end lg:self-auto shrink-0 bg-surface-container-lowest/80 backdrop-blur-md px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="flex flex-col">
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant uppercase">Margin of Safety</span>
+<span class="font-telemetry-data text-telemetry-data text-secondary font-bold">+3.2% Recovery Delta</span>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant uppercase">Cohort Census</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold">N=68 Closed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Benchmark Metric Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Card 1: Treatment Success Rate -->
+<div class="relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Treatment Success</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-md text-label-md font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+3.2%
+        </span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">88.2%</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">/ 60 Discharged</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 my-space-sm">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 88.2%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-unit text-telemetry-unit text-on-surface-variant pt-space-xs">
+<span>Target: ≥ 85.0%</span>
+<span class="text-secondary font-medium">Safe Buffer Active</span>
+</div>
+</div>
+<!-- Card 2: Mortality Rate -->
+<div class="relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Gross Mortality</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold flex items-center gap-1">
+          -3.2% Below Cap
+        </span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">11.8%</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">/ 8 Fatalities</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 my-space-sm">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 11.8%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-unit text-telemetry-unit text-on-surface-variant pt-space-xs">
+<span>WHO Ceiling: ≤ 15.0%</span>
+<span class="text-on-surface font-medium">8 of 68 Resolved</span>
+</div>
+</div>
+<!-- Card 3: Nursing Temp-Check Completion -->
+<div class="relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Nursing Vitals Sweep</span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">98.4%</span>
+<span class="font-telemetry-unit text-telemetry-unit text-secondary font-semibold">Q4H Compliant</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 my-space-sm">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 98.4%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-unit text-telemetry-unit text-on-surface-variant pt-space-xs">
+<span>30-Day Mean: 97.9%</span>
+<span>1,788 Logs</span>
+</div>
+</div>
+<!-- Card 4: Doctor Visit Completion -->
+<div class="relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Physician Rounds Sweep</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-telemetry-unit text-telemetry-unit font-bold">ON TRACK</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">96.1%</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">Daily Mandate</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 my-space-sm">
+<div class="bg-primary h-1.5 rounded-full" style="width: 96.1%;"></div>
+</div>
+<div class="flex items-center justify-between font-telemetry-unit text-telemetry-unit text-on-surface-variant pt-space-xs">
+<span>Attending Sign-off</span>
+<span>711 of 740 Rounds</span>
+</div>
+</div>
+</div>
+<!-- Visual Analytics & Trajectory Section (60 / 40 Split) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Chart 1: Trajectory Area Chart (7 Cols ~ 60%) -->
+<div class="lg:col-span-7 flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Discharge &amp; Outcome Trajectory Over Time</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">30-day cumulative discharge pacing against WHO biocontainment protocol expectations</p>
+</div>
+<div class="flex items-center gap-space-md font-telemetry-unit text-telemetry-unit">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-secondary"></span>
+<span class="text-on-surface">Actual Recovered</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-outline"></span>
+<span class="text-on-surface-variant">Benchmark Baseline (85%)</span>
+</div>
+</div>
+</div>
+<!-- Area Chart SVG -->
+<div class="w-full h-64 mt-space-sm relative">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 600 220">
+<defs>
+<lineargradient id="recoveredGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#006a61" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#006a61" stop-opacity="0.01"></stop>
+</lineargradient>
+<lineargradient id="benchmarkGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#74777f" stop-opacity="0.10"></stop>
+<stop offset="100%" stop-color="#74777f" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="600" y1="40" y2="40"></line>
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="600" y1="90" y2="90"></line>
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="600" y1="140" y2="140"></line>
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="600" y1="190" y2="190"></line>
+<!-- Axis Values -->
+<text class="font-telemetry-unit text-[10px]" fill="#74777f" x="5" y="38">60 pts</text>
+<text class="font-telemetry-unit text-[10px]" fill="#74777f" x="5" y="88">45 pts</text>
+<text class="font-telemetry-unit text-[10px]" fill="#74777f" x="5" y="138">30 pts</text>
+<text class="font-telemetry-unit text-[10px]" fill="#74777f" x="5" y="188">15 pts</text>
+<!-- Benchmark Linear Threshold (Dashed) -->
+<path d="M 40 195 L 180 155 L 320 115 L 460 75 L 590 52" fill="none" stroke="#74777f" stroke-dasharray="4 4" stroke-width="1.75"></path>
+<!-- Actual Discharges Area Fill -->
+<path d="M 40 195 L 110 182 L 180 162 L 250 135 L 320 102 L 390 84 L 460 62 L 530 46 L 590 38 L 590 200 L 40 200 Z" fill="url(#recoveredGradient)"></path>
+<!-- Actual Discharges Stroke Line -->
+<path d="M 40 195 L 110 182 L 180 162 L 250 135 L 320 102 L 390 84 L 460 62 L 530 46 L 590 38" fill="none" stroke="#006a61" stroke-linecap="round" stroke-width="3"></path>
+<!-- Critical Markers -->
+<circle cx="180" cy="162" fill="#ffffff" r="4" stroke="#006a61" stroke-width="2.5"></circle>
+<circle cx="320" cy="102" fill="#ffffff" r="4" stroke="#006a61" stroke-width="2.5"></circle>
+<circle cx="460" cy="62" fill="#ffffff" r="4" stroke="#006a61" stroke-width="2.5"></circle>
+<circle cx="590" cy="38" fill="#006a61" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- Tooltip Marker -->
+<div class="absolute right-4 top-2 bg-primary text-on-primary px-space-sm py-1 rounded shadow-md pointer-events-none flex flex-col">
+<span class="font-telemetry-unit text-telemetry-unit text-secondary-fixed">DAY 30 ACCUMULATION</span>
+<span class="font-telemetry-data text-telemetry-data font-bold">60 Discharged (88.2%)</span>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center pt-space-sm font-telemetry-unit text-telemetry-unit text-on-surface-variant px-space-sm">
+<span>Week 1 (Oct 01)</span>
+<span>Week 2 (Oct 08)</span>
+<span>Week 3 (Oct 15)</span>
+<span>Week 4 (Oct 22)</span>
+<span>Current (Oct 24)</span>
+</div>
+<!-- Footer Micro-Insights -->
+<div class="mt-space-md pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Zero protocol variance reported during peak Phase-3 biocontainment window.</span>
+</div>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-semibold">σ = 0.48 d</span>
+</div>
+</div>
+<!-- Chart 2: Shift Compliance Gauges (5 Cols ~ 40%) -->
+<div class="lg:col-span-5 flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Clinical Shift Compliance</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time operational mandate tracking</p>
+</div>
+<span class="material-symbols-outlined text-secondary">speed</span>
+</div>
+<!-- Gauges Layout -->
+<div class="flex flex-col justify-around flex-1 gap-space-md py-space-xs">
+<!-- Meter 1: Vitals Sweeps -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="98.4, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-telemetry-data text-telemetry-data font-bold text-on-surface">98%</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Vitals Check Compliance</span>
+<span class="font-telemetry-data text-telemetry-data text-secondary font-bold">98.4%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nursing staff Q4H temperature &amp; telemetry sweeps</span>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Target: &gt;95.0% across all isolation suites</span>
+</div>
+</div>
+<!-- Meter 2: Doctor Rounds -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="96.1, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-telemetry-data text-telemetry-data font-bold text-on-surface">96%</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Physician Rounds Cadence</span>
+<span class="font-telemetry-data text-telemetry-data text-primary font-bold">96.1%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily biocontainment attending clinical examinations</span>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Target: &gt;90.0% completion before 15:00</span>
+</div>
+</div>
+<!-- Meter 3: Discharge Clearance Velocity -->
+<div class="flex items-center gap-space-md p-space-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82.0, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-telemetry-data text-telemetry-data font-bold text-on-surface">3.4h</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Discharge Clearance Lag</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold">Avg 3.4 hrs</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Elapsed from secondary PCR negativity to egress</span>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Threshold Ceiling: &lt;4.0 hrs to airlock clear</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-xs flex items-center justify-between font-telemetry-unit text-telemetry-unit text-on-surface-variant">
+<span>Continuous Audit Log #2024-B9</span>
+<button class="text-secondary hover:underline font-semibold flex items-center gap-0.5">
+<span>Drilldown Logs</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Epidemiological Cohort Summary Table (Explicit Denominator Table) -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden mb-space-xl">
+<div class="p-space-lg bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Epidemiological Cohort Stratification</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-unit text-telemetry-unit">N=68 Cases</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Explicit clinical outcomes by isolation severity tier and length-of-stay distribution</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant uppercase">Methodology: Kaplan-Meier Validated</span>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 font-label-md text-label-md uppercase text-on-surface-variant tracking-wider">
+<th class="py-space-md px-space-lg font-semibold">Triage Sub-Cohort</th>
+<th class="py-space-md px-space-md font-semibold text-right">Enrolled (N)</th>
+<th class="py-space-md px-space-md font-semibold text-right">Discharged / Rec.</th>
+<th class="py-space-md px-space-md font-semibold text-right">Deceased</th>
+<th class="py-space-md px-space-md font-semibold text-right">Median LOS</th>
+<th class="py-space-md px-space-lg font-semibold text-right">Fever Resolution Mean</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1: Mild -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Mild Isolation Tier 1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ambulatory containment / Ward A</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">32 (47.1%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-secondary font-semibold">
+              32 (100.0%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface-variant">
+              0 (0.0%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">
+              6.5 days
+            </td>
+<td class="py-space-md px-space-lg text-right font-telemetry-data text-telemetry-data">
+              2.8 days
+            </td>
+</tr>
+<!-- Row 2: Moderate -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Moderate Tier 2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Supplemental O2 &lt;4L / Ward B</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">24 (35.3%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-secondary font-semibold">
+              22 (91.7%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface-variant">
+              2 (8.3%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">
+              9.2 days
+            </td>
+<td class="py-space-md px-space-lg text-right font-telemetry-data text-telemetry-data">
+              4.6 days
+            </td>
+</tr>
+<!-- Row 3: Severe -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Severe Tier 3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High-flow biocontainment / Ward C</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">12 (17.6%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface font-semibold">
+              6 (50.0%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface font-semibold">
+              4 (33.3%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">
+              15.8 days
+            </td>
+<td class="py-space-md px-space-lg text-right font-telemetry-data text-telemetry-data">
+              8.1 days
+            </td>
+</tr>
+<!-- Row 4: Critical High Isolator -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-lg font-label-lg text-label-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Critical High Isolator</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Negative pressure ventilator air-lock / Ward D</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">6 (8.8%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface font-semibold">
+              0 (0.0%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-error font-semibold">
+              2 (33.3%)
+            </td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">
+              21.0 days
+            </td>
+<td class="py-space-md px-space-lg text-right font-telemetry-data text-telemetry-data">
+              11.4 days
+            </td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container-high/40 font-label-lg text-label-lg text-on-surface font-bold">
+<td class="py-space-md px-space-lg">All Cohorts Combined (Total N=68 Resolved)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">68 (100%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-secondary">60 (88.2%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data text-on-surface">8 (11.8%)</td>
+<td class="py-space-md px-space-md text-right font-telemetry-data text-telemetry-data">8.4 days</td>
+<td class="py-space-md px-space-lg text-right font-telemetry-data text-telemetry-data">4.2 days</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Bottom Regulatory Disclaimer -->
+<div class="flex items-center justify-center p-space-md rounded-xl bg-surface-container-highest/60 text-on-surface-variant">
+<div class="flex items-center gap-space-sm text-center">
+<span class="material-symbols-outlined text-[18px] text-tertiary">info</span>
+<span class="font-telemetry-unit text-telemetry-unit font-bold tracking-wider uppercase">
+        ALL METRICS ARE SYNTHETIC DEMO DATA FOR TECHNICAL PRODUCT MANAGEMENT ASSESSMENT. NOT SOURCED FROM ACTUAL MEDICAL RECORDS.
+      </span>
+</div>
+</div>
+</div></div></main></div></body></html>

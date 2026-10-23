@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "secondary-container": "#86f2e4", "on-surface-variant": "#43474e", "on-error-container": "#93000a", "inverse-primary": "#acc8f7", "secondary": "#006a61", "tertiary": "#001f4b", "on-primary-fixed": "#001c3b", "error": "#ba1a1a", "surface": "#f8f9ff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "primary-fixed-dim": "#acc8f7", "primary-container": "#17365d", "surface-tint": "#435f89", "on-secondary-fixed-variant": "#005049", "on-secondary-container": "#006f66", "surface-bright": "#f8f9ff", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "outline": "#74777f", "on-background": "#0b1c30", "surface-container-highest": "#d3e4fe", "on-tertiary-container": "#6a9dff", "surface-variant": "#d3e4fe", "outline-variant": "#c4c6cf", "error-container": "#ffdad6", "on-primary-fixed-variant": "#2b486f", "surface-container-lowest": "#ffffff", "background": "#f8f9ff", "tertiary-fixed-dim": "#adc6ff", "surface-dim": "#cbdbf5", "secondary-fixed": "#89f5e7", "on-error": "#ffffff", "on-secondary-fixed": "#00201d", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "on-primary-container": "#84a0cd", "tertiary-container": "#003374", "secondary-fixed-dim": "#6bd8cb", "on-surface": "#0b1c30", "on-tertiary-fixed": "#001a42", "primary": "#002043", "primary-fixed": "#d5e3ff", "on-tertiary-fixed-variant": "#004395", "tertiary-fixed": "#d8e2ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-xl": "1.5rem", "margin": "1rem", "space-2xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-lg": "1rem" }, "fontFamily": { "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "telemetry-data": ["JetBrains Mono"], "telemetry-unit": ["JetBrains Mono"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"] }, "fontSize": { "headline-lg-mobile": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "telemetry-data": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "telemetry-unit": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[250px] bg-primary text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="p-space-lg bg-tertiary"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-on-secondary"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div><span class="font-headline-md text-headline-md tracking-tight font-bold block text-on-primary">QuarantineCare</span><span class="font-telemetry-unit text-telemetry-unit uppercase tracking-wider text-secondary-fixed block">Biocontainment OS</span></div></div><div class="mt-space-sm inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary-fixed"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider text-[10px]">74 BEDS ISOLATION</span></div></div><nav class="flex flex-col gap-space-xs px-space-sm py-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Overview</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="patients" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">hotel</span><span>Patients</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-telemetry-unit text-telemetry-unit">74 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="nurse-tasks" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">assignment</span><span>Nurse Tasks</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-unit text-telemetry-unit">12</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="doctor-rounds" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span>Doctor Rounds</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface font-telemetry-unit text-telemetry-unit">19</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="discharge-queue" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">exit_to_app</span><span>Discharge Queue</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-telemetry-unit text-telemetry-unit font-bold">5</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="outcomes" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">insert_chart</span><span>Outcomes &amp; Reports</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm" data-path="audit-log" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">history</span><span>Audit Log</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed hover:bg-primary-container hover:text-on-primary transition-colors font-label-lg text-label-lg" data-path="settings" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></div></a></nav></div><div class="p-space-md bg-tertiary/70 flex flex-col gap-space-md"><div class="p-space-sm rounded-lg bg-primary-container"><div class="flex items-center justify-between"><span class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Capacity Status</span><span class="inline-flex items-center gap-1 font-telemetry-unit text-telemetry-unit text-secondary-fixed font-bold"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>FULL</span></div><div class="mt-1 font-telemetry-data text-telemetry-data text-on-primary">74 / 74 Beds (100%)</div><div class="w-full bg-primary rounded-full h-1.5 mt-2"><div class="bg-secondary-fixed h-1.5 rounded-full w-full"></div></div><p class="mt-1 font-body-sm text-body-sm text-error-container">High Alert: Wing B Air-Lock Active</p></div><div class="flex items-center gap-space-sm pt-space-xs"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed"><span class="material-symbols-outlined text-[18px]">medical_services</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-lg text-label-lg text-on-primary truncate">S. Jenkins, RN</span><span class="font-body-sm text-body-sm text-primary-fixed-dim truncate">Isolation Ward B</span></div></div></div></aside><div class="pl-[250px] min-h-screen flex flex-col"><header class="fixed top-0 left-[250px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">domain</span><span>Containment Alpha</span><span class="text-outline-variant">/</span><span class="font-label-lg text-label-lg text-on-surface">Ward Matrix</span></div></div><div class="flex-1 max-w-md mx-space-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-9 pr-14 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-secondary/50 shadow-sm" placeholder="Search patient ID, name, bed (e.g. QC-042, Bed 14)..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-telemetry-unit text-telemetry-unit">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex flex-col items-end"><div class="inline-flex items-center rounded-lg bg-surface-container p-0.5"><button class="px-space-sm py-1 rounded text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors">Nurse</button><button class="px-space-sm py-1 rounded text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors">Doctor</button><button class="px-space-sm py-1 rounded bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm">Admin</button></div><span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant mt-0.5">Simulation Mode</span></div><div class="flex items-center gap-space-xs font-telemetry-data text-telemetry-data text-on-surface-variant bg-surface-container-lowest px-space-sm py-1 rounded-lg shadow-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>14:32</span><span class="font-telemetry-unit text-telemetry-unit text-outline-variant">OCT 24</span></div><button class="relative p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">3</span></button><button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="w-full px-space-lg py-space-xs bg-surface-container-high/60 flex items-center justify-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-tertiary">shield_lock</span><span class="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">SYNTHETIC DEMO DATA — Operational simulation only. Not connected to live clinical records.</span></div><div class="w-full px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Level Cryptographic Header -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md relative z-10">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Ledger Authority Level 4</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">BLOCK #8,941,204</span>
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-telemetry-unit text-telemetry-unit font-bold">SHA-256 SEALED</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Administrative Audit Log &amp; Compliance Ledger</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs">
+<span>Tamper-Evident System Event Stream</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-md text-label-md text-primary font-medium">ISO-27799 Healthcare Biocontainment Standard</span>
+<span class="text-outline-variant">•</span>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">256-bit Merkle Tree Root Verified</span>
+</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs xl:pt-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-space-xs shadow-sm" id="verifyIntegrityBtn">
+<span class="material-symbols-outlined text-[18px] text-secondary" id="verifyIcon">gpp_good</span>
+<span id="verifyLabel">Verify Integrity</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors flex items-center gap-space-xs shadow-sm" id="exportHashLogBtn">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">download_done</span>
+<span>Export Cryptographic Hash Log</span>
+</button>
+</div>
+</div>
+<!-- Live Ledger Heartbeat & Integrity Strip -->
+<div class="mt-space-md pt-space-md grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Current Merkle Root</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">token</span>
+</div>
+<div class="mt-1 font-telemetry-data text-telemetry-data text-on-surface font-bold truncate">0x7f4c...9b82e1</div>
+<span class="font-telemetry-unit text-telemetry-unit text-secondary mt-0.5">Anchored 41s ago</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Chain State</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+</div>
+<div class="mt-1 font-telemetry-data text-telemetry-data text-on-surface font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Synchronized
+        </div>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant mt-0.5">Zero Drift Detected</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Total Signed Events</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">receipt_long</span>
+</div>
+<div class="mt-1 font-telemetry-data text-telemetry-data text-on-surface font-bold">1,482 today</div>
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant mt-0.5">821 Clinician · 661 Telemetry</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Air-Lock Containment</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">security</span>
+</div>
+<div class="mt-1 font-telemetry-data text-telemetry-data text-on-surface font-bold">Strict Audit Active</div>
+<span class="font-telemetry-unit text-telemetry-unit text-secondary-container mt-0.5 text-on-secondary-container font-semibold">100% Non-Repudiation</span>
+</div>
+</div>
+</div>
+<!-- Filter & Query Control Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-8 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-secondary shadow-inner" id="auditSearchInput" placeholder="Filter by Patient ID (e.g. QC-008), Staff ID (RN-4821), or Action keyword..." type="text"/>
+<button class="absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface hidden" id="clearSearch">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Quick Date Picker Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_today</span>
+<select class="bg-transparent text-on-surface font-label-lg text-label-lg focus:outline-none cursor-pointer" id="dateFilter">
+<option value="today">Today (Oct 24, 2024)</option>
+<option value="yesterday">Yesterday (Oct 23, 2024)</option>
+<option value="7days">Last 7 Operational Shifts</option>
+<option value="custom">Custom Ledger Range...</option>
+</select>
+</div>
+<!-- Staff Member Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">badge</span>
+<select class="bg-transparent text-on-surface font-label-lg text-label-lg focus:outline-none cursor-pointer" id="staffFilter">
+<option value="all">All Personnel</option>
+<option value="Thorne">MED-9402 · Dr. Aris Thorne (Physician)</option>
+<option value="Jenkins">RN-4821 · Sarah Jenkins (Nurse)</option>
+<option value="Miller">ADM-010 · Mark Miller (Admin)</option>
+<option value="Garcia">RN-5108 · Elena Garcia (Nurse)</option>
+<option value="Kowalski">MED-1102 · Dr. Nathan Kowalski</option>
+</select>
+</div>
+<!-- Action Type Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_alt</span>
+<select class="bg-transparent text-on-surface font-label-lg text-label-lg focus:outline-none cursor-pointer" id="actionFilter">
+<option value="all">All Actions</option>
+<option value="Temperature Check">Temp Entry</option>
+<option value="Physician Visit">Doctor Round</option>
+<option value="Discharge Authorization">Discharge Sign-off</option>
+<option value="Bed Reallocation">Bed Reallocation</option>
+<option value="Exception Override">Exception Override</option>
+<option value="Clinical Alert">Clinical Alert</option>
+</select>
+</div>
+<!-- Reset Filter Button -->
+<button class="px-space-sm py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md flex items-center justify-center gap-1" id="resetFiltersBtn">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+<!-- Active Tag Indicator Bar -->
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm px-space-xs pt-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-telemetry-unit text-telemetry-unit uppercase tracking-wider text-outline">Active Ledger Scope:</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-telemetry-unit text-telemetry-unit">
+          Facility: Containment Alpha (Beds 01-74)
+        </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-telemetry-unit text-telemetry-unit">
+          Shift: Day Monitor A
+        </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary/10 text-secondary font-telemetry-unit text-telemetry-unit font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          STREAM LIVE
+        </span>
+</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">
+        Tamper-Check Passcode: <span class="font-telemetry-data text-on-surface font-bold">0xFD81-22C</span>
+</div>
+</div>
+</div>
+<!-- Audit Event Ledger Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider border-none">
+<th class="py-space-sm px-space-md font-semibold min-w-[170px]">Timestamp &amp; Epoch</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[200px]">Staff ID &amp; Role</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[170px]">Action Category</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[140px]">Patient &amp; Bed</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[130px]">Previous Value</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[140px]">New Value</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[230px]">Clinical Reason / Notes</th>
+<th class="py-space-sm px-space-md font-semibold text-right min-w-[130px]">Event Hash</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y-0 text-on-surface" id="auditTableBody">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">14:35:12 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729780512</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">SJ</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">RN Sarah Jenkins</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">RN-4821 (Lead Nurse)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">device_thermostat</span>
+                Temperature Check
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-029</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing B · Bed 08</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded">37.4°C</span>
+<span class="block font-telemetry-unit text-telemetry-unit text-outline">08:00 Sweep</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-secondary font-bold bg-secondary-container/40 px-1.5 py-0.5 rounded">37.1°C</span>
+<span class="block font-telemetry-unit text-telemetry-unit text-secondary">Normalized</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="14:00 Routine Bedside Sweep. Patient denies shivering or malaise.">
+                14:00 Routine Bedside Sweep. Patient denies shivering.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Attested via BioPass terminal</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>e9a4f...3b1c</span>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">14:28:44 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729780124</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">AT</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Dr. Aris Thorne</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">MED-9402 (Attending MD)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">stethoscope</span>
+                Physician Visit
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-014</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing A · Bed 12</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pending Round</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Completed</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Auscultation clear. Continued airborne droplet isolation 48h.">
+                Auscultation clear bilaterally. Droplet isolation confirmed 48h.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Clinical Notes Signed (PKI)</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>c284d...99fa</span>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">14:15:02 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729779302</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">MM</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Mark Miller</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">ADM-010 (Ward Admin)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[14px]">output</span>
+                Discharge Authorization
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-008</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing A · Bed 04</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Status: Inpatient Bed 04</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Discharged - Sanitize</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Completed 3-day fever free protocol verified. Dual PCR negative.">
+                Completed 3-day fever free protocol verified. Dual PCR neg.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Public Health Board Clearance #9021</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>410bf...7180</span>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">13:58:30 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729778310</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">EG</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">RN Elena Garcia</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">RN-5108 (Bio-Triage)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                Clinical Alert
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-062</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing C · Bed 19</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">SpO2: 97%</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-error font-bold bg-error-container/60 px-1.5 py-0.5 rounded">SpO2: 91%</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Pyrexia spike observed; supplemental O2 started at 2L/min.">
+                Pyrexia spike observed; O2 titration initiated at 2L/min.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-error font-semibold">Urgent Clinician Page Dispatched</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>f331a...809d</span>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">13:42:19 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729777339</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">MM</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Mark Miller</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">ADM-010 (Ward Admin)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-primary">swap_horiz</span>
+                Bed Reallocation
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-041</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing D · Bed 22</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bed 02 (Wing D)</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Bed 22 (Wing D - Neg Pressure)</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Upgraded containment grade due to aerosol generation potential.">
+                Upgraded to Negative Pressure Suite per infection officer.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Transfer Protocol #772 Completed</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>8bb20...12e4</span>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">13:10:05 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729775405</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">NK</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Dr. Nathan Kowalski</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">MED-1102 (Consultant)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">device_thermostat</span>
+                Temperature Check
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-071</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing B · Bed 16</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">36.8°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold">36.9°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Normothermic. Stable day 4 post-exposure.">
+                Normothermic. Day 4 post-exposure stable.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Continuous Band Log</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>aa041...5df8</span>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">12:45:51 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729773951</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">AT</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Dr. Aris Thorne</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">MED-9402 (Attending MD)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+                Exception Override
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-011</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing A · Bed 09</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lockout: 4hr Interval</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-error font-semibold">Emergency Access Override</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Clinical deterioration override for rapid central line placement.">
+                Rapid IV line placement under biocontainment full PAPR.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-error font-semibold">Dual Doctor Countersign Verified</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>66d92...01cb</span>
+</div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">12:20:18 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729772418</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">SJ</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">RN Sarah Jenkins</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">RN-4821 (Lead Nurse)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">stethoscope</span>
+                Physician Visit
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-003</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing A · Bed 02</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Round Pending</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Physician Assessed</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Daily round completed. Viral PCR throat swab re-ordered for morning.">
+                Daily round completed. Repeat PCR ordered for 06:00.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Lab requisition token #L-8120</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>3e51a...9981</span>
+</div>
+</td>
+</tr>
+<!-- Row 9 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">11:55:00 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729770900</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">EG</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">RN Elena Garcia</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">RN-5108 (Bio-Triage)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">device_thermostat</span>
+                Temperature Check
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-018</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing B · Bed 14</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">38.2°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold">37.6°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Antipyretic administered 10:30; responsive reduction observed.">
+                Antipyretic post-check. Responsive drop in thermal curve.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Med-Admin Log cross-signed</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>d82e1...3304</span>
+</div>
+</td>
+</tr>
+<!-- Row 10 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">11:12:40 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729768360</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">MM</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Mark Miller</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">ADM-010 (Ward Admin)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[14px]">output</span>
+                Discharge Authorization
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-005</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing A · Bed 06</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Status: Inpatient Bed 06</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm font-semibold text-secondary">Discharged - Sanitized</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="UV-C air-lock disinfection cycle complete; bed released to pool.">
+                UV-C aerosol chamber decontamination completed. Bed free.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-secondary font-semibold">Sanitation Cert #SAN-4402</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>91af4...002a</span>
+</div>
+</td>
+</tr>
+<!-- Row 11 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">10:40:15 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729766415</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-primary text-on-primary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">SJ</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">RN Sarah Jenkins</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">RN-4821 (Lead Nurse)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">device_thermostat</span>
+                Temperature Check
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-049</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing C · Bed 02</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">37.0°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold">37.0°C</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Morning routine check. Patient ambulating in containment chamber.">
+                Morning baseline verified. Patient ambulating comfortably.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Pulse: 72 bpm · SpO2: 99%</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>72ce9...5b61</span>
+</div>
+</td>
+</tr>
+<!-- Row 12 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data text-on-surface font-bold">10:05:08 UTC</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">2024-10-24 · 1729764308</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary font-telemetry-unit text-telemetry-unit flex items-center justify-center font-bold">AT</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-medium">Dr. Aris Thorne</div>
+<div class="font-telemetry-unit text-telemetry-unit text-on-surface-variant">MED-9402 (Attending MD)</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-secondary">stethoscope</span>
+                Physician Visit
+              </span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="font-telemetry-data text-telemetry-data font-semibold text-primary">QC-022</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Wing B · Bed 10</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Assessment Scheduled</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Cleared for Low-Aerosol Stepdown</span>
+</td>
+<td class="py-space-sm px-space-md">
+<p class="font-body-sm text-body-sm text-on-surface truncate max-w-[240px]" title="Clinical resolution established. Transfer queued for shift handover.">
+                Resolution established. Stepdown authorized for 18:00 handover.
+              </p>
+<span class="font-telemetry-unit text-telemetry-unit text-outline">Clinical Notes Signed (PKI)</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1 font-telemetry-data text-telemetry-unit text-primary-container bg-surface-container px-2 py-0.5 rounded group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>b4308...81ef</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State Container (Hidden by default) -->
+<div class="hidden py-space-2xl flex flex-col items-center justify-center text-center px-space-md" id="noResultsState">
+<span class="material-symbols-outlined text-[48px] text-outline-variant mb-space-sm">content_paste_off</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">No Cryptographic Events Match Criteria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-1">
+        No immutable ledger records matched your current combination of staff, patient ID, and action filter parameters.
+      </p>
+<button class="mt-space-md px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm" id="clearFiltersInline">
+        Clear All Query Filters
+      </button>
+</div>
+<!-- Pagination & Retention Notice Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-telemetry-data text-telemetry-data text-on-surface">
+          Showing <span class="font-bold text-primary">1–12</span> of <span class="font-bold text-primary">1,482</span> recorded audit events today
+        </span>
+<div class="hidden sm:flex items-center gap-space-xs">
+<span class="font-telemetry-unit text-telemetry-unit text-on-surface-variant uppercase">Page Size:</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-semibold bg-surface-container-lowest px-2 py-0.5 rounded">12 / page</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center shadow-sm disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<span class="px-space-sm py-1 rounded bg-primary text-on-primary font-telemetry-data text-telemetry-data font-bold">1</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface font-telemetry-data text-telemetry-data hover:bg-surface-container">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface font-telemetry-data text-telemetry-data hover:bg-surface-container">3</button>
+<span class="px-space-xs font-telemetry-data text-telemetry-data text-outline">...</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface font-telemetry-data text-telemetry-data hover:bg-surface-container">124</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center shadow-sm">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cryptographic Immutability Notice Callout -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col sm:flex-row items-start sm:items-center gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary flex items-center justify-center text-on-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-space-xs">
+<span>Statutory Healthcare Biocontainment Notice</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-telemetry-unit text-telemetry-unit">21 CFR Part 11</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Historical entries are cryptographically sealed, timestamp-anchored, and strictly read-only. In accordance with clinical biocontainment governance, records cannot be redacted, purged, or overwritten. Any adjustments or amendments must be recorded as append-only linked child transactions referencing the original hash block.
+      </p>
+</div>
+<div class="shrink-0 self-end sm:self-center">
+<span class="inline-flex items-center gap-1 font-telemetry-unit text-telemetry-unit text-secondary bg-surface-container-lowest px-space-sm py-1.5 rounded-lg shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+        IMMUTABLE CERT #QA-992
+      </span>
+</div>
+</div>
+<!-- Real-time Verification Modal / Toast Simulation -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="integrityModal">
+<div class="bg-primary text-on-primary rounded-xl p-space-md shadow-xl max-w-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg font-bold text-on-primary">Ledger Validated</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5">All 1,482 blocks verified against Root Merkle Anchor. Zero sequence breaks or signature discrepancies found.</p>
+<span class="mt-1 block font-telemetry-unit text-telemetry-unit text-secondary-fixed">Execution time: 42ms · Status: OK</span>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="exportModal">
+<div class="bg-primary text-on-primary rounded-xl p-space-md shadow-xl max-w-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">sim_card_download</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg font-bold text-on-primary">Cryptographic Hash Exported</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-0.5">SHA-256 Ledger Manifest bundle generated (JSON-LD + X.509 signature payload).</p>
+<span class="mt-1 block font-telemetry-unit text-telemetry-unit text-secondary-fixed">File: QC_Alpha_Audit_20241024.hashlog</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initAuditLedger() {
+    const searchInput = document.getElementById('auditSearchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const staffFilter = document.getElementById('staffFilter');
+    const actionFilter = document.getElementById('actionFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const clearFiltersInline = document.getElementById('clearFiltersInline');
+    const tableBody = document.getElementById('auditTableBody');
+    const noResults = document.getElementById('noResultsState');
+    const verifyBtn = document.getElementById('verifyIntegrityBtn');
+    const exportBtn = document.getElementById('exportHashLogBtn');
+    const integrityModal = document.getElementById('integrityModal');
+    const exportModal = document.getElementById('exportModal');
+
+    function applyFilters() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      const staffVal = staffFilter.value;
+      const actionVal = actionFilter.value;
+      const rows = tableBody.querySelectorAll('tr');
+      let visibleCount = 0;
+
+      if (query.length > 0) {
+        clearSearch.classList.remove('hidden');
+      } else {
+        clearSearch.classList.add('hidden');
+      }
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        let matchesQuery = query === '' || text.includes(query);
+        let matchesStaff = staffVal === 'all' || text.includes(staffVal.toLowerCase());
+        let matchesAction = actionVal === 'all' || text.includes(actionVal.toLowerCase());
+
+        if (matchesQuery && matchesStaff && matchesAction) {
+          row.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    staffFilter.addEventListener('change', applyFilters);
+    actionFilter.addEventListener('change', applyFilters);
+    dateFilter.addEventListener('change', applyFilters);
+
+    function resetAll() {
+      searchInput.value = '';
+      staffFilter.value = 'all';
+      actionFilter.value = 'all';
+      dateFilter.value = 'today';
+      applyFilters();
+    }
+
+    clearSearch.addEventListener('click', () => {
+      searchInput.value = '';
+      applyFilters();
+    });
+
+    resetFiltersBtn.addEventListener('click', resetAll);
+    clearFiltersInline.addEventListener('click', resetAll);
+
+    // Micro-interactions: Verify integrity simulation
+    verifyBtn.addEventListener('click', () => {
+      const verifyIcon = document.getElementById('verifyIcon');
+      const verifyLabel = document.getElementById('verifyLabel');
+      
+      verifyIcon.classList.add('animate-spin');
+      verifyLabel.textContent = 'Verifying Merkle Tree...';
+      verifyBtn.disabled = true;
+
+      setTimeout(() => {
+        verifyIcon.classList.remove('animate-spin');
+        verifyLabel.textContent = 'Audit Validated';
+        verifyBtn.disabled = false;
+
+        integrityModal.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          integrityModal.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+          verifyLabel.textContent = 'Verify Integrity';
+        }, 4000);
+      }, 700);
+    });
+
+    // Micro-interactions: Export log simulation
+    exportBtn.addEventListener('click', () => {
+      exportModal.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        exportModal.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3500);
+    });
+  })();
+</script></div></main></div></body></html>
